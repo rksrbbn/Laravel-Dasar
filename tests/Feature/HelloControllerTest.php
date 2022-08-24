@@ -8,17 +8,17 @@ use Tests\TestCase;
 
 class HelloControllerTest extends TestCase
 {
-    public function testController()
-    {
-        $this->get('/controller/hello')
-            ->assertSeeText("Hello World");
-    }
-
     // public function testController()
     // {
-    //     $this->get('/controller/hello/Raka')
-    //         ->assertSeeText("Halo Raka");
+    //     $this->get('/controller/hello')
+    //         ->assertSeeText("Hello World");
     // }
+
+    public function testController()
+    {
+        $this->get('/controller/hello/Raka')
+            ->assertSeeText("Halo Raka");
+    }
 
     public function testInput()
     {
