@@ -13,9 +13,9 @@ class EncryptTest extends TestCase
 {
     public function testEncrypt()
     {
-        $encrypt = Crypt::encrypt('Eko Kurniawan');
+        $encrypt = Crypt::encrypt('Raka Santang');
         $decrypt = Crypt::decrypt($encrypt);
 
-        assertEquals('Eko Kurniawan', $decrypt);
+        assertEquals('Raka Santang', $decrypt);
     }
 }

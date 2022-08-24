@@ -32,10 +32,10 @@ class FacadeTest extends TestCase
     {
         Config::shouldReceive('get')
         ->with('contoh.author.first')
-        ->andReturn("Eko Keren");
+        ->andReturn("Raka Keren");
 
         $firstname = Config::get('contoh.author.first');
 
-        assertEquals("Eko Keren",$firstname);
+        assertEquals("Raka Keren",$firstname);
     }
 }

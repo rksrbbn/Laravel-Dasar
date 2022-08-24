@@ -19,7 +19,7 @@ class ResponseTest extends TestCase
     {
         $this->get('/response/header')
             ->assertStatus(200)
-            ->assertSeeText('Eko')->assertSeeText('Khannedy')
+            ->assertSeeText('Raka')->assertSeeText('Rabbani')
             ->assertHeader('Content-Type', 'application/json')
             ->assertHeader('Author', 'Raka')
             ->assertHeader('App', 'Belajar Laravel');
@@ -28,13 +28,13 @@ class ResponseTest extends TestCase
     public function testView()
     {
         $this->get('/response/type/view')
-            ->assertSeeText("Hello Eko");
+            ->assertSeeText("Hello Raka");
     }
 
     public function testJson()
     {
         $this->get('/response/type/json')
-            ->assertJson(['firstName' => 'Eko', 'lastName' => 'Khannedy']);
+            ->assertJson(['firstName' => 'Raka', 'lastName' => 'Rabbani']);
     }
 
     public function testFile()
@@ -46,6 +46,6 @@ class ResponseTest extends TestCase
     public function testDownload()
     {
         $this->get('/response/type/download')
-            ->assertDownload('Khannedy.png');
+            ->assertDownload('raka.png');
     }
 }

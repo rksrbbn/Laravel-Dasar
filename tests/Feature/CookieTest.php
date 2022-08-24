@@ -11,17 +11,17 @@ class CookieTest extends TestCase
     public function testCreateCookie()
     {
         $this->get('/cookie/set')
-            ->assertCookie('User-Id', 'khannedy')
+            ->assertCookie('User-Id', 'raka')
             ->assertCookie('Is-Member', 'true');
     }
 
     public function testGetCookie()
     {
-        $this->withCookie('User-Id', 'khannedy')
+        $this->withCookie('User-Id', 'raka')
             ->withCookie('Is-Member', 'true')
             ->get('/cookie/get')
             ->assertJson([
-                'userId' => 'khannedy',
+                'userId' => 'raka',
                 'isMember' => 'true'
             ]);
     }

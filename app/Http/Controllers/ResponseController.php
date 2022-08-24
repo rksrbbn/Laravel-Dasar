@@ -16,7 +16,7 @@ class ResponseController extends Controller
 
     public function header(Request $request): Response
     {
-        $body = ['firstName'=>'Eko', 'lastName'=>'Khannedy'];
+        $body = ['firstName'=>'Raka', 'lastName'=>'Rabbani'];
         return response(json_encode($body), 200)
             ->header('Content-Type', 'application/json')
             ->withHeaders([
@@ -28,22 +28,22 @@ class ResponseController extends Controller
     public function responseView(Request $request): Response
     {
         return response()
-            ->view('hello', ['name'=>'Eko']);
+            ->view('hello', ['name'=>'Raka']);
     }
 
     public function responseJson(Request $request): JsonResponse
     {
-        $body = ['firstName'=>'Eko', 'lastName'=>'Khannedy'];
+        $body = ['firstName'=>'Raka', 'lastName'=>'Rabbani'];
         return response()->json($body);
     }
 
     public function responseFile(Request $request):BinaryFileResponse
     {
-        return response()->file(storage_path('app/public/pictures/Khannedy.png'));
+        return response()->file(storage_path('app/public/pictures/raka.png'));
     }
 
     public function responseDownload(Request $request):BinaryFileResponse
     {
-        return response()->download(storage_path('app/public/pictures/Khannedy.png'), 'Khannedy.png');
+        return response()->download(storage_path('app/public/pictures/raka.png'), 'raka.png');
     }
 }

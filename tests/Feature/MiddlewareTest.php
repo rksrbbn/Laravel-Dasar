@@ -17,7 +17,7 @@ class MiddlewareTest extends TestCase
 
     public function testValid()
     {
-        $this->withHeader('X-API-KEY', 'PZN')
+        $this->withHeader('X-API-KEY', 'TRP')
             ->get('/middleware/api')
             ->assertStatus(200)
             ->assertSeeText('OK');

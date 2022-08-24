@@ -159,7 +159,7 @@ Route::get('/redirect/name/{name}', [\App\Http\Controllers\RedirectController::c
     ->name('redirect-hello');
 
 Route::get('/url/named', function () {
-    return route('redirect-hello', ['name' => 'Eko']);
+    return route('redirect-hello', ['name' => 'Raka']);
 });
 
 

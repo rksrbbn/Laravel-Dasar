@@ -12,18 +12,18 @@ class SessionTest extends TestCase
     {
         $this->get('/session/create')
             ->assertSeeText("OK")
-            ->assertSessionHas("User-Id", "khannedy")
+            ->assertSessionHas("User-Id", "raka")
             ->assertSessionHas("Is-Member", "true");
     }
 
     public function testGetSession()
     {
         $this->withSession([
-            'UserId' => 'khannedy',
+            'UserId' => 'raka',
             'IsMember' => 'true'
         ])
         ->get('/session/get')
-            ->assertSeeText("khannedy")
+            ->assertSeeText("raka")
             ->assertSeeText("true");
     }
 }

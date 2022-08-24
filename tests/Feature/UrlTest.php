@@ -10,14 +10,14 @@ class UrlTest extends TestCase
 {
     public function testCurrent()
     {
-        $this->get('/url/current?name=Eko')
-            ->assertSeeText("/url/current?name=Eko");
+        $this->get('/url/current?name=Raka')
+            ->assertSeeText("/url/current?name=Raka");
     }
 
     public function testNamed()
     {
         $this->get('/url/named')
-            ->assertSeeText("/redirect/name/Eko");
+            ->assertSeeText("/redirect/name/Raka");
     }
 
     public function testAction()
