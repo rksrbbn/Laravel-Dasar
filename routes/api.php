@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Response;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +15,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 
 Route::get('/items', function(){
     return "Items";
+});
+
+Route::prefix('/response/type')->group(function(){
+    Route::get('/view', function(){
+        return response()
+            ->view('hello', ['name'=>'Raka Santang Rabbani']);
+    });
+    Route::get('/json', function(){
+        $body = ['firstName'=>'Ahmad', 'lastName'=>'Budi'];
+        return response()->json($body);
+    });
 });
